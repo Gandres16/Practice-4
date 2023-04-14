@@ -50,7 +50,13 @@ av.neat %>% filter(time == 1, death == "YES") %>%
 View(av.neat)
 ```
 
-```{r}
+# part 2: validation
 
+# statement: There’s a 2-in-3 chance that a member of the Avengers returned from their first stint in the afterlife
+
+
+```{r}
+av.neat %>% filter(time==1, death=="YES") %>% summarise(total.num = n(), return1death = sum(return == "YES"), chance = return1death/total.num)
 ```
+this statement is ture as their percentage is 69% which is slightly higher than a 2 in 3 chance percentage which is 66%
 
